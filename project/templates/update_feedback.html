@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Feedback</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        .update-feedback {
+            width: 300px;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+        }
+        .update-feedback .success-message {
+            color: green;
+            margin-bottom: 10px;
+        }
+        .update-feedback .back-button {
+            display: block;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="update-feedback">
+        {% if success_message %}
+        <p class="success-message">{{ success_message }}</p>
+        {% endif %}
+        <a href="/update-feedback" class="back-button">Go Back</a>
+    </div>
+</body>
+</html>

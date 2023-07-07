@@ -1,0 +1,50 @@
+<body>
+    <div class="dashboard">
+        <h1>Food Management Systems</h1>
+        <div class="button-box">
+            <a href="/order-details" class="dashboard-button">Order Details</a>
+            <a href="/update-feedback" class="dashboard-button">Update Feedback</a>
+            <a href="/view-table" class="dashboard-button">View Table</a>
+            <a href="/logout" class="dashboard-button">Logout</a>
+        </div>
+    </div>
+</body>
+
+    <style>
+        .dashboard {
+            text-align: center;
+            background-color: #f1f1f1;
+            padding: 40px;
+        }
+
+        .dashboard h1 {
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 32px;
+        }
+
+        .button-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .dashboard-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 18px;
+            background-color: #d9d9d9;
+            color: #333;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .dashboard-button:hover {
+            background-color: #ccc;
+        }
+    </style>
+

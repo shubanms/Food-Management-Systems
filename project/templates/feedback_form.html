@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Feedback</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        .feedback-form {
+            width: 300px;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+        }
+        .feedback-form input[type="text"]
+        {
+            width: 93%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        .feedback-form textarea {
+            width: 93%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        .feedback-form input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .feedback-form .error-message {
+            color: red;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    {% extends "base.html" %}
+
+    {% block title %}Feedback form{% endblock %}
+
+    {% block content %}
+        <div class="feedback-form">
+            {% if error_message %}
+            <p class="error-message">{{ error_message }}</p>
+            {% endif %}
+            <form action="/update-feedback" method="POST">
+                <h1>Update feedback</h1>
+                <input type="text" name="customer_id" placeholder="Customer ID" required>
+                <textarea name="feedback_text" placeholder="Feedback" required></textarea>
+                <input type="submit" value="Update Feedback">
+            </form>
+        </div>
+    {% endblock %}
+</body>
+</html>

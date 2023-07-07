@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            position: relative;
+            padding-top: 40px;
+        }
+        
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 10px;
+            background-color: #f1f1f1;
+            text-align: center;
+            z-index: 999;
+        }
+        
+        .header a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+        
+        .content {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="/dashboard">Back to Dashboard</a>
+    </div>
+
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

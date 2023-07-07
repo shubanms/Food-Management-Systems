@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Table</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        .view-table {
+            width: 800px;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+        }
+
+        .view-table input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .view-table .error-message {
+            color: red;
+            margin-bottom: 10px;
+        }
+
+        .view-table select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .view-table .table-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: auto;
+        }
+
+        .view-table table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .view-table table th,
+        .view-table table td {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .view-table .back-button {
+            display: block;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    {% extends "base.html" %}
+
+    {% block title %}View Table{% endblock %}
+
+    {% block content %}
+        <div class="view-table">
+            {% if error_message %}
+            <p class="error-message">{{ error_message }}</p>
+            {% endif %}
+            <h1>View tables</h1>
+            <form action="/view-table" method="POST">
+                <select name="table_name" required>
+                    <option value="">Select a table</option>
+                    {% for table in table_names %}
+                    <option value="{{ table[0] }}">{{ table[0] }}</option>
+                    {% endfor %}
+                </select>
+                <input type="submit" value="View Table">
+            </form>
+            {% if table_name %}
+            <h3>{{ table_name }}</h3>
+            <div class="table-container">
+                <table>
+                    <tr>
+                        {% for column in table_description %}
+                        <th>{{ column[0] }}</th>
+                        {% endfor %}
+                    </tr>
+                    {% for row in table_rows %}
+                    <tr>
+                        {% for cell in row %}
+                        <td>{{ cell }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            {% endif %}
+            <a href="/view-table" class="back-button">Go Back</a>
+        </div>
+    {% endblock %}
+</body>
+</html>
