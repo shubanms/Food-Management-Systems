@@ -9,7 +9,7 @@ db_config = {
     "host": "localhost",
     "database": "FoodManagementSystem",
     "user": "postgres",
-    "password": "shuban"
+    "password": "YOUR_PASSWORD"
 }
 
 # Admin credentials
