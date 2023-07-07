@@ -193,4 +193,6 @@ Refer to the table descriptions above for more details on each table's purpose a
 Contributions to the Restaurant Management System are welcome! If you have any improvements or new features to suggest, please submit a pull request on the GitHub repository.
 
 ## License
-The Restaurant Management System is open-source software licensed under the [MIT License](https://opensource.org/licenses/MIT).
+The Restaurant Management System is licensed under the Apache License 2.0.
+
+
