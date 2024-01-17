@@ -194,5 +194,3 @@ Contributions to the Restaurant Management System are welcome! If you have any i
 
 ## License
 The Restaurant Management System is licensed under the Apache License 2.0.
-
-
